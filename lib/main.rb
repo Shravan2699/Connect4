@@ -1,5 +1,6 @@
 require_relative './player'
 require_relative './board'
+require_relative './game'
 
 def my_game
     my_board = Board.new

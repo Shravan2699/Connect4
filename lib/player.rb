@@ -10,9 +10,12 @@ class Player
         puts "#{@name},Which column would you like to drop your pin?"
         pos = gets.chomp.to_i
         row = board.length - 1
+        
         while row >= 0
           if board[row][pos - 1] == ' '
             board[row][pos - 1] = @marker
+            player_coordinates = [row+1,pos]
+            puts "Last player move coordinate is  #{player_coordinates}"
             return true
           end
           row -= 1
@@ -36,6 +39,8 @@ class Computer
         while row >= 0
             if board[row][pos - 1] == ' '
                 board[row][pos - 1] = 'O'
+                computer_coordinates = [row+1,pos]
+                puts "Last computer move coordinate is  #{computer_coordinates}"
                 return true
             end
             row -= 1
