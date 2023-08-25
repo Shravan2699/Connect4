@@ -4,13 +4,14 @@ class Board
         @rows = 6
         @columns = 7
         @board1 = Array.new(rows) { Array.new(columns, ' ') }
+        # @board1[7] = [1,2,3,4,5,6,7]
     end
 
     def get_rows_count
         @rows
     end
     
-      # Add a method to get the number of columns in the board
+    # Add a method to get the number of columns in the board
     def get_columns_count
         @columns
     end
@@ -20,9 +21,6 @@ class Board
             puts row.join(' | ')
             puts '-' * (row.length * 4- 1) # Separator line between rows
         end
-    end
-
-    # def check_for_wins(grid,pos_x,pos_y)
-        
+    end        
 end
 
