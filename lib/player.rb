@@ -1,9 +1,10 @@
 class Player
     attr_accessor :name,:marker
 
+
     def initialize(name,marker)
-        @name = name
         @marker = marker
+        @name = name
     end
 
     def player_move(board)
@@ -46,17 +47,22 @@ class Computer
 
     def initialize
         @choices = (1..7).to_a
+        @pos = @choices.sample
+    end
+
+    def set_pos(value)
+        @pos = value
     end
 
 
     def computer_move(board)
-        pos = @choices.sample
+        pos = @pos
         row = board.length - 1
         while row >= 0
             if board[row][pos - 1] == ' '
                 board[row][pos - 1] = 0
                 computer_coordinates = [row+1,pos]
-                puts "Last computer move coordinate is  #{computer_coordinates}"
+                puts "Last computer move coordinate is #{computer_coordinates}"
                 return true
             end
             row -= 1
